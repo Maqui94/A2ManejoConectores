@@ -19,7 +19,7 @@ public class DBConnection {
         try {
             connection= DriverManager.getConnection(url,"root","");
         } catch (SQLException e) {
-            System.out.println("Conexion incorrecta");
+            System.out.println("Error al conectar con la base de datos: "+ e.getMessage());
         }
         System.out.println("Conexion creada");
     }
