@@ -15,4 +15,16 @@ public class Pasajero {
     private String nombre;
     private int edad;
     private double peso;
+
+    public Pasajero(String nombre, int edad, double peso) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.peso = peso;
+    }
+    public void mostrarDatos(){
+        System.out.println("id= " +id);
+        System.out.println("nombre= " +nombre);
+        System.out.println("edad= " +edad);
+        System.out.println("peso= " +peso);
+    }
 }

@@ -28,7 +28,6 @@ public class CocheDAO {
         preparedStatement.setString(3, coche.getModelo());
         preparedStatement.setString(4, coche.getColor());
         preparedStatement.execute();
-
     }
 
     public void borrarCoche(int id) {

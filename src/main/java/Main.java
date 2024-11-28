@@ -5,11 +5,14 @@ public class Main {
     public static void main(String[] args) {
         Concesionario2 concesionario = new Concesionario2();
 
-        // concesionario.agregarCoche();
-         //  concesionario.eliminarCoche();
-          //  concesionario.consultarCoche();
-        //   concesionario.modificarCoche();
-      //  concesionario.mostrarFlota();
-        concesionario.menuCoche();
+      //  concesionario.menuCoche();
+      //  concesionario.agregarPasajero();
+      //  concesionario.eliminarPasajero();
+     //   concesionario.consultarPasajero();
+      //  concesionario.mostrarPasajerosTotales();
+       // concesionario.agregarPasajeroACoche();
+     //   concesionario.eliminarPasajeroCoche();
+     //  concesionario.mostrarPasajerosEnCoche();
+        concesionario.menuPrincipal();
     }
 }

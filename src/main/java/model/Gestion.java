@@ -11,4 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Gestion {
     private int id, id_coche,id_pasajero;
+
+    public Gestion(int id_coche, int id_pasajero) {
+        this.id_coche = id_coche;
+        this.id_pasajero = id_pasajero;
+    }
 }
