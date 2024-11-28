@@ -1,14 +1,12 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Coche {
     private int id;
     private String matricula;
@@ -29,4 +27,5 @@ public class Coche {
         System.out.println("matricula= " +matricula);
         System.out.println("color= " +color);
     }
+
 }

@@ -6,6 +6,7 @@ import DAO.PasajeroDAO;
 import model.Coche;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Concesionario2 {
@@ -44,4 +45,76 @@ public class Concesionario2 {
         int id=scanner.nextInt();
         cocheDAO.borrarCoche(id);
     }
-}
+    public void consultarCoche(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Introducir el Id del coche");
+        int id=scanner.nextInt();
+        cocheDAO.consultarCoche(id).mostrarDatos();
+    }
+
+    public void modificarCoche(){
+        Scanner scanner=new Scanner(System.in);
+            System.out.print("ID del coche a modificar: ");
+            int id = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("Nueva matricula: ");
+            String matricula = scanner.nextLine();
+            System.out.print("Nuevo marca: ");
+            String marca = scanner.nextLine();
+            System.out.print("Nuevo modelo: ");
+            String modelo = scanner.nextLine();
+            System.out.print("Nuevo color ");
+            String color = scanner.nextLine();
+            Coche coche = new Coche(id,matricula, marca, modelo, color);
+            cocheDAO.modificarCoche(coche);
+            System.out.println("Coche modificado correctamente.");
+        }
+    public void mostrarFlota(){
+        ArrayList<Coche> coches = cocheDAO.flota();
+        for (Coche coche : coches) {
+            System.out.printf("ID: %d, Matrícula: %s, Marca: %s, Modelo: %s, Color: %s%n",
+                    coche.getId(), coche.getMatricula(), coche.getMarca(), coche.getModelo(), coche.getColor());
+        }
+    }
+    public void menuCoche(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        do {
+            System.out.println("===== MENÚ CONCESIONARIO =====");
+            System.out.println("1. Agregar Coche");
+            System.out.println("2. Eliminar Coche");
+            System.out.println("3. Consultar Coche");
+            System.out.println("4. Modificar Coche");
+            System.out.println("5. Mostrar Flota");
+            System.out.println("0. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer
+            switch (opcion) {
+                case 1:
+                    agregarCoche();
+                    break;
+                case 2:
+                    eliminarCoche();
+                    break;
+                case 3:
+                    consultarCoche();
+                    break;
+                case 4:
+                    modificarCoche();
+                    break;
+                case 5:
+                    mostrarFlota();
+                    break;
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Inténtalo de nuevo.");
+            }
+            System.out.println();
+        } while (opcion != 0);
+
+    }
+    }
+
